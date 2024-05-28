@@ -1,0 +1,194 @@
+###### Overview of Javascript ############
+
+1. Javascript is a high level, prototype-based, object-oriented, multi-paradigm, interpreted or just-in-time
+compiled, dynamic, single-threaded, garbage-collected programming language with first class functions
+and a non-blocking event loop concurrency model.
+
+Terminology:
+
+1. High level:
+	Such programming languages don't make developers manage system resources as those operations are
+	abstracted away.
+
+2. Garbage-collected:
+	Javascript has algorithms inside the javascript engine which removes old, unused objects
+	from memory in order to not clog it up with unnecessary stuff.
+
+3. Interpreted or Just-in-time compiled:
+	Javascript is compiled from human-readable language to machine code. It happens inside the
+	javascript engine.
+
+4. Multi-paradigm:
+	An approach of structuring code, which will direct your coding style and technique
+
+	a. Procedural programming
+	b. Object-oriented programming
+	c. Functional programming
+
+	Or it can be divided into 2 types:
+
+	a. Imperative
+	b. Declarative
+
+5. Prototype-based object-oriented:
+	Every created object inherits methods from its prototype using prototypal inheritance.
+
+6. First-class functions:
+	It means functions can be treated as variables. We can pass them into other functions
+	and return them from functions.
+
+7. Dynamically-typed:
+	It means there are no datatype definitions. Types become known at runtime and the datatype
+	of variable is automatically changed.
+
+	To know more about statically typed vs dynamically typed, check here:
+	https://www.bairesdev.com/blog/static-vs-dynamic-typing/
+
+8. Single-threaded non-blocking event loop
+
+
+########### The Javascript Engine and Runtime ##########
+
+Javascript Engine:
+
+1. It is a program that executes javascript code. Every browser has its own javascript engine and
+the most well-known one is Google Chrome's V8 Engine used in Node.js also.
+
+2. A javascript engine has 2 components the callstack and the heap.
+
+3. The callstack is where the code is executed using the execution contexts.
+
+4. Heap is the unstructured memory pool which stores all the objects that our application
+   needs.
+
+5. As a computer's processor understands only 0s and 1s the javascript code is first converted to 
+   binary code using compilation or interpretation
+
+6. Compilation:
+	Entire code is converted into machine code at once, and written to a binary file that can
+	be executed by a computer.
+
+7. Interpretation:
+	Interpreter runs through the source code and executes it line by line
+
+8. Just-In-Time compilation:
+	Entire code is converted into machine code at once, then executed immediately. The step in
+	which machine code is written to a binary file is skipped and binary code is executed
+	immediately.
+
+9. Javascript is a just-in-time compiled language.
+
+10. Steps in which javascript is executed:
+	a. Parsing
+	b. Compilation
+	c. Execution
+	d. Optimization
+
+	d, b, c steps keep running in loops till the code is executed entirely.
+
+11. Web APIs are accessible using the global window object.
+
+12. Parts of the Javascript Runtime:
+	a. JS Engine - Heap, Callstack
+	b. Web APIs - DOM, fetch API, timers
+	c. Callback queue - click events, timer callbacks, data callbacks
+
+13. The functions in callback queue are executed when the callstack becomes empty
+
+14. Node.js runtime contains the same parts as a Javascript runtime but it does not
+	have the web APIs instead it has C++ bindings & threadpool.
+
+
+########## Execution contexts and the call stack #########
+
+What is an execution context ?
+
+1. After the compilation of code is done, a global execution context is created for the
+	top level code and top level code is basically all the code that is not inside the
+	function.
+
+2. Top level code is basically expressions and function declarations but the code inside
+	the function is executed when called.
+
+3. Execution context is an environment where a piece of javascript is executed. It stores
+	all the information for some code to be executed.
+
+4. In any javascript project only 1 global execution context (default context) is created.
+
+5. After creation of global execution context, execution of top level code inside it happens.
+
+6. After the top level code is executed, functions start to execute. For every function to be
+	executed a execution context is created for that function and for methods in js objects.
+	All these execution contexts together make up the call stack.
+
+7. When functions are done executing, the JS engine waits for callback functions to arrive so
+	that it can execute these.
+
+What's inside the execution context ?
+
+1. Variable Environment:
+	The first thing inside the execution context is the variable environment. It stores all
+	the variables and function declarations are stored and there is a special arguments object.
+	This object contains all the arguments that were passed to the function.
+
+2. A function can access variables outside the function using the scope chain.
+
+3. Each context also gets a this keyword.
+
+4. Above 3 parts are generated during the creation phase right before execution.
+
+5. Execution contexts of arrow functions don't get this keyword and arguments object. Instead
+	they can use the arguments object and the this keyword from their closest regular function
+	parent.
+
+How will the JS engine keep track of the order in which functions were called ? And how will it
+know where it currently is in the execution ?
+
+1. Call Stack:
+	It is the place where execution contexts get stacked on top of each other to keep track
+	of where we are in the execution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
