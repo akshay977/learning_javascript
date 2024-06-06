@@ -195,7 +195,7 @@ and not outside the block.
 with "let" and "const". "let" and "const" are block scoped whereas "var" is scoped to the function or the global
 scope.
 
-3. Functions are also block scoped (only in strict mode).
+3. Functions are also block scoped (only in strict mode). Otherwise they are block scoped.
 
 4. Scope chain:
 
@@ -226,13 +226,28 @@ outer scopes.
 
 5. Scope chain vs call stack:
 
+=> Call stack is the order in which functions were called. It has nothing to do with order in which functions
+	are called.
+	Scope is the order in which functions are written.
+
+=> Scope chain is equal to adding together all the variable environments of all the parent scopes.
+	Scope chain is built behind the scenes by the JS engine.
+
+=> Variable lookup:
+	When a variable is not in the current scope, the engine looks up in the scope chain until it finds
+	the variable its looking for. This is called variable lookup.
+
+=> Lexical scoping:
+	It determines the access to variables and functions written within a program.
+
+=> Scope chain is nothing to do with the order of the function calls.
 
 
+########## Variable Environment, Hoisting and the temporal dead zone (TDZ) ###########
 
+1. Lets take a closer look at the variable environment.
 
-
-
-
+2. 
 
 
 
