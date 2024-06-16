@@ -283,6 +283,25 @@ d. Function expressions and arrow functions:
 	=> Makes code more readable.
 	=> Helps in using functions before actual declaration.
 
+######## this keyword ##########
+
+1. "this" keyword is a special variable that is created for every execution context (every function).
+	It takes the value of (points to) the "owner" of the function in which the this keyword is used.
+
+2. "this" keyword is NOT static. It depends on how the function is called, and its value is only assigned
+	when the function is actually called.
+
+3. Different ways a function is called:
+	
+	a. Object method call => this keyword points to the object that is calling the method.
+	b. Simple function call => this = undefined (only in strict mode) otherwise points to window object
+										in browser.
+	c. Arrow functions => this points to the this value of outer execution context. It does not get its own "this" object
+	d. Event listener => this keyword points to the DOM element the handler is attached to.
+
+4. this keyword does not point to the function itself and also not its variable environment
+
+
 
 
 
