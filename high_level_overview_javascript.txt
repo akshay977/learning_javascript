@@ -249,29 +249,28 @@ outer scopes.
 
 2. Hoisting:
 	It makes some types of variables accessible/usable in the code before they
-are actually declared. "Variables are lifted to the top of their scope". Before execution,
-code is scanned for variable declarations and for each variable a new property is created
-in the variable environment object.
+	are actually declared. "Variables are lifted to the top of their scope". Before execution,
+	code is scanned for variable declarations and for each variable a new property is created
+	in the variable environment object.
 
 3. Hoisting works differently for different variable types:
 
-a. Function declarations:
-	These are hoisted with initial value as the function and it is block scoped (in strict mode only).
-	In practice, we can use function declarations before they are actually declared in the code.
+	a. Function declarations:
+			These are hoisted with initial value as the function and it is block scoped (in strict mode only).
+			In practice, we can use function declarations before they are actually declared in the code.
 
-b. var variables:
-	These are hoisted with initial value as undefined and they are function scoped. var variables
-	give undefined before the declaration without throwing any errors.
+	b. var variables:
+			These are hoisted with initial value as undefined and they are function scoped. var variables
+			give undefined before the declaration without throwing any errors.
 
-c. let and const variables:
-	let and const variables are not hoisted as they are in the temporal dead zone (TDZ). TDZ is the region
-	between the start of the scope and the place where the variables are declared. let and const are block
-	scoped.
+	c. let and const variables:
+			let and const variables are not hoisted as they are in the temporal dead zone (TDZ). TDZ is the region
+			between the start of the scope and the place where the variables are declared. let and const are block
+			scoped.
 
 d. Function expressions and arrow functions:
 	Hoisting for these depends on using var, let or const for storing the expressions. We cannot use them
 	before we write them in the code unlike function declarations.
-
 
 3. Temporal Dead Zone:
 	=> This exists so that it is easier to avoid and catch errors. Accessing variables before declaration
@@ -281,7 +280,7 @@ d. Function expressions and arrow functions:
 		when they are declared.
 
 4. Why Hoisting ?
-	=> Makes code more readable
+	=> Makes code more readable.
 	=> Helps in using functions before actual declaration.
 
 
