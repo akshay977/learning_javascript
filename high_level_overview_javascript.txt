@@ -293,57 +293,11 @@ d. Function expressions and arrow functions:
 
 3. Different ways a function is called:
 	
-	a. Object method call => this keyword points to the object that is calling the method.
+	a. Object method call => this keyword points to the object that is calling the method (if it is not an arrow function).
 	b. Simple function call => this = undefined (only in strict mode) otherwise points to window object
 										in browser.
 	c. Arrow functions => this points to the this value of outer execution context. It does not get its own "this" object
 	d. Event listener => this keyword points to the DOM element the handler is attached to.
 
 4. this keyword does not point to the function itself and also not its variable environment
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
