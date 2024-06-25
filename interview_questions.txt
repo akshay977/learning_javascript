@@ -1,0 +1,63 @@
+####### Eli Lilly and Company ###########
+
+1. MySQL Triggers
+2. Database Indexing and types of indexes
+3. Delete duplicates in existing table
+4. CORS
+5. Error handling middleware
+6. Event Loop phases (process.nextTick, setImmediate, setTimeout) Why they work that way ?
+7. Different middleware used
+8. Authentication vs Authorisation with examples
+9. Handle errors at global level (Winston logger)
+10. Unit Testing in React and Nodejs
+11. React.Fiber
+12. Lifecycle hooks in React (Functional and class based components)
+13. List of ES6 features
+14. What are generator functions in Javascript ?
+15. What is function currying ?
+16. Do you know webpack ?
+17. Any devops experience ?
+18. What is CI CD and how to deploy CI CD pipelines ?
+19. What are the different datatypes in Javascript ?
+20. What are the differences between primitive and Object datatypes ?
+21. What is SSO (Single sign-on) ?
+22. Is this.setState synchronous or async ?
+23. How do worker threads work ?
+24. Are reducers in redux async ?
+25. Features of reverse proxy like nginx ?
+26. What is reconciliation process in React or what is the algorithm behind it ?
+27. What is middleware in the context of React? Have you worked with any middleware before?
+
+27. Problem:
+
+console.log('a');
+setTimeout(() => console.log('b'), 0);
+new Promise((resolve) => {
+	console.log('f');
+	resolve();
+});
+new Promise((resolve) => {
+	resolve();
+}).then(data => {
+	console.log('c');
+	return;
+}).then(data => {
+	console.log('d');
+});
+console.log('e');
+
+Ans:
+a
+e
+f
+c
+d
+undefined
+b
+
+
+######## Aerchain #########
+Hackerrank Test
+
+1. Use http module only to accept GET and POST requests with body and send success and 
+   error response with statusCode ?

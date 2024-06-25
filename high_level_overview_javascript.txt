@@ -301,3 +301,4 @@ d. Function expressions and arrow functions:
 
 4. this keyword does not point to the function itself and also not its variable environment
 
+########### Datatypes in Javascript #############
