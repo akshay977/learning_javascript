@@ -268,9 +268,9 @@ outer scopes.
 			between the start of the scope and the place where the variables are declared. let and const are block
 			scoped.
 
-d. Function expressions and arrow functions:
-	Hoisting for these depends on using var, let or const for storing the expressions. We cannot use them
-	before we write them in the code unlike function declarations.
+	d. Function expressions and arrow functions:
+		Hoisting for these depends on using var, let or const for storing the expressions. We cannot use them
+		before we write them in the code unlike function declarations.
 
 3. Temporal Dead Zone:
 	=> This exists so that it is easier to avoid and catch errors. Accessing variables before declaration
@@ -300,5 +300,3 @@ d. Function expressions and arrow functions:
 	d. Event listener => this keyword points to the DOM element the handler is attached to.
 
 4. this keyword does not point to the function itself and also not its variable environment
-
-########### Datatypes in Javascript #############

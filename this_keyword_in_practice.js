@@ -32,7 +32,7 @@ matilda.calcAge = jonas.calcAge;
 
 matilda.calcAge(); // this keyword points to the owner of the function i.e matilda object
 
-const f = jonas.calcAge();
+const f = jonas.calcAge;
 
 f(); // throws an error that this keyword is undefined as the function doesn't have an owner.
 
