@@ -25,6 +25,7 @@
 	https://restcountries.com/v3.1/name/deutschland
 */
 
+
 // XMLHttpRequest: It is the most old school way of sending API requests
 
 // Following Request code works in browser only
