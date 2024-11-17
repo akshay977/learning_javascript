@@ -69,7 +69,7 @@ the most well-known one is Google Chrome's V8 Engine used in Node.js also.
 	be executed by a computer.
 
 7. Interpretation:
-	Interpreter runs through the source code and executes it line by line
+	Interpreter runs through the source code and executes it line by line.
 
 8. Just-In-Time compilation:
 	Entire code is converted into machine code at once, then executed immediately. The step in
@@ -138,8 +138,7 @@ What's inside the execution context ?
 4. Above 3 parts are generated during the creation phase right before execution.
 
 5. Execution contexts of arrow functions don't get this keyword and arguments object. Instead
-	they can use the arguments object and the this keyword from their closest regular function
-	parent.
+	they can use the arguments object and the this keyword from their closest parent regular function.
 
 How will the JS engine keep track of the order in which functions were called ? And how will it
 know where it currently is in the execution ?
@@ -183,7 +182,7 @@ all blocks.
 Function scope:
 Each and every function creates a scope and the variables inside are accessible inside that function.
 It is called local scope. Outside the function the variables are not accessible. It is technically
-same as the variable environment. Reference error is thrown if tried to access variable inside function.
+same as the variable environment. Reference error is thrown if tried to access variable present inside function.
 
 Block scope:
 1. Previously in ES5 only function and global scopes were present but starting from ES6 module we have
@@ -195,7 +194,7 @@ and not outside the block.
 with "let" and "const". "let" and "const" are block scoped whereas "var" is scoped to the function or the global
 scope.
 
-3. Functions are also block scoped (only in strict mode). Otherwise they are block scoped.
+3. Functions are also block scoped (only in strict mode). Otherwise they are global scoped.
 
 4. Scope chain:
 
@@ -226,8 +225,7 @@ outer scopes.
 
 5. Scope chain vs call stack:
 
-=> Call stack is the order in which functions were called. It has nothing to do with order in which functions
-	are called.
+=> Call stack is the order in which functions were called.
 	Scope is the order in which functions are written.
 
 => Scope chain is equal to adding together all the variable environments of all the parent scopes.
@@ -248,7 +246,7 @@ outer scopes.
 1. Lets take a closer look at the variable environment.
 
 2. Hoisting:
-	It makes some types of variables accessible/usable in the code before they
+		It makes some types of variables accessible/usable in the code before they
 	are actually declared. "Variables are lifted to the top of their scope". Before execution,
 	code is scanned for variable declarations and for each variable a new property is created
 	in the variable environment object.
@@ -268,9 +266,9 @@ outer scopes.
 			between the start of the scope and the place where the variables are declared. let and const are block
 			scoped.
 
-d. Function expressions and arrow functions:
-	Hoisting for these depends on using var, let or const for storing the expressions. We cannot use them
-	before we write them in the code unlike function declarations.
+	d. Function expressions and arrow functions:
+			Hoisting for these depends on using var, let or const for storing the expressions. We cannot use them
+			before we write them in the code unlike function declarations.
 
 3. Temporal Dead Zone:
 	=> This exists so that it is easier to avoid and catch errors. Accessing variables before declaration
@@ -296,8 +294,8 @@ d. Function expressions and arrow functions:
 	a. Object method call => this keyword points to the object that is calling the method (if it is not an arrow function).
 	b. Simple function call => this = undefined (only in strict mode) otherwise points to window object
 										in browser.
-	c. Arrow functions => this points to the this value of outer execution context. It does not get its own "this" object
+	c. Arrow functions => this keyword points to the this value of outer execution context. It does not get its own "this" object.
 	d. Event listener => this keyword points to the DOM element the handler is attached to.
 
-4. this keyword does not point to the function itself and also not its variable environment
+4. this keyword does not point to the function itself and also not its variable environment.
 

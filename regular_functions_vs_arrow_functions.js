@@ -69,7 +69,7 @@ addExpr(1, 2);
 addExpr(1, 2, 3, 4); // 3, 4 can be accessed from the arguments keyword
 
 var addArrow = (a, b) => {
-	console.log(arguments) // prints Reference error: arguments is not undefined
+	console.log(arguments) // prints Reference error: arguments is not defined
 	return a + b
 };
 

@@ -8,7 +8,7 @@
 */
 
 let total = 0;
-let count = 10
+let count = 10;
 console.log(total ?? count); // 0
 console.log(total || count); // 10
 
