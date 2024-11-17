@@ -26,12 +26,12 @@ console.log(passenger);
 	1. 1st argument is a string which is a primitive type
 	2. 2nd argument is an object which is a reference type
 	3. In the case of primitive types a copy of the value 
-		is passed and in the case of reference type the
-		memory address is passed so the actual object gets
-		modified
+	   is passed and in the case of reference type the
+	   memory address is passed so the actual object gets
+	   modified.
 	4. In javascript there is no pass by reference actually.
-		For objects we pass the memory address of the object
-		which is a value so it is still pass by value.
+	   For objects we pass the memory address of the object
+	   which is a value so it is still pass by value.
 */
 
 // ######### First class functions and Higher order functions ############
@@ -161,8 +161,8 @@ console.log(addVAT(100));
 
 /*
 	Closures is based on this idea:
-	Any function will have access to the variable environment of the 
-	execution context where it was created so the returned function 
+		Any function will have access to the variable environment of 
+	the execution context where it was created so the returned function 
 	will still have access to passengerCount in below closure.
 
 	Variable environment attached to the function exactly as it was

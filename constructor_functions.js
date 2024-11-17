@@ -70,12 +70,13 @@ console.log('Jack age:', jack.calcAge());
 // ####### IMPORTANT POINT ########
 
 // Prototype object present in Person constructor function is equal to the prototype objects present
-// in the objects created out of it BUT not equal to prototype of Person constructor function.
+// in the objects created out of it BUT __proto__ in Person constructor function is 
+// not equal to prototype of Person constructor function.
 
 
-console.log(Person.prototype.isPrototypeOf(jonas)); // returns true
-console.log(Person.prototype.isPrototypeOf(matilda)); // returns true
-console.log(Person.prototype.isPrototypeOf(Person)); // returns false
+console.log(Person.prototype.isPrototypeOf(jonas)); // returns true  || jonas.__proto__ === Person.prototype
+console.log(Person.prototype.isPrototypeOf(matilda)); // returns true || matilda.__proto__ === Person.prototype
+console.log(Person.prototype.isPrototypeOf(Person)); // returns false || Person.__proto__ !== Person.prototype
 
 
 // console.log(jonas.__proto__); // __proto__ property is the link between the object to its prototype
@@ -105,7 +106,7 @@ const arr = [1, 2, 2, 2, 2, 6, 7];
 console.log(arr.__proto__);
 
 // Array is the constructor function to create new arrays
-// its prototype is equal to prototype assigned to arrays 
+// whose prototype is equal to prototype property assigned to arrays 
 // created by it
 
 console.log(arr.__proto__ === Array.prototype);
