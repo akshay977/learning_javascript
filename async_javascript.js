@@ -25,6 +25,10 @@
 	https://restcountries.com/v3.1/name/deutschland
 */
 
+
+// https://medium.com/@manikmudholkar831995/worker-threads-multitasking-in-nodejs-6028cdf35e9d
+
+
 // XMLHttpRequest: It is the most old school way of sending API requests
 
 // Following Request code works in browser only
