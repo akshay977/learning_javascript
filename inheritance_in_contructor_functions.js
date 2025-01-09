@@ -19,7 +19,7 @@ const Student = function(firstName, birthYear, course) {
 
 /*
 	For Student to inherit Person class the prototype of Student.prototype
-	should point to Person.prototype
+	should have a object of prototype Person.prototype
 */
 console.log(Student.prototype);
 Student.prototype = Object.create(Person.prototype); // CORRECT

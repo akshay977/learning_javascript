@@ -175,7 +175,7 @@ know where it currently is in the execution ?
 Scope is the place where the variables are declared. Functions also are stored in variables.
 
 Global scope:
-This for top level code or for all variables and functions declared outside of any  block
+This for top level code or for all variables and functions declared outside of any block
 or function. These variables are accessible everywhere in our program, in all functions and 
 all blocks.
 

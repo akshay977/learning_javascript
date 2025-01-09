@@ -49,7 +49,7 @@ const jay = 'Jay';
 	And that includes, constructor functions.
 	Every object that's created by a certain constructor 
 	function will get access to all the methods and properties
-	that we define on the constructors prototype property.
+	that we define on the constructor function's prototype property.
 */
 
 // In this approach only 1 copy of the function exists for all the objects
@@ -64,7 +64,7 @@ console.log(jonas);
 console.log('Matilda age:', matilda.calcAge());
 console.log('Jack age:', jack.calcAge());
 
-// console.log(jonas.__proto__); // prototype object inherited from Person class
+// console.log(jonas.__proto__); // prototype object inherited from Person constructor function
 // console.log(jonas.__proto__ === Person.prototype); // true
 
 // ####### IMPORTANT POINT ########
