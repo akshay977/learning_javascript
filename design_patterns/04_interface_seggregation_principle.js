@@ -37,8 +37,9 @@ class OldFashionedPrinter extends Machine {
 
 
 /*
-	Machine class (abstract interface) is split up like
-	below
+	As per Interface Seggregation Principle, Machine class 
+	(abstract interface) is split up into multiple classes
+	(abstract interface) and used.
 */
 
 class Printer {
