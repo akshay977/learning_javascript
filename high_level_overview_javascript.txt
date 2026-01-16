@@ -357,3 +357,19 @@ outer scopes.
 	  it is a script tag of type module.
 	- In script files, the file is dowloaded in a synchronous way unless async or defer attributes
 	  are used in the script tag.
+
+###### How ES6 modules are imported ######
+
+1. In the first step, parsing of code starts with hoisting all top level variables and imports.
+During parsing the code is only read and not executed. All the modules are imported before the 
+execution starts.
+
+2. Importing of modules happen in a synchronous way to bundle and eliminate dead code.
+Importing can happen only at top level as they get known during the parsing stage and help
+with bundling and dead code elimination.
+
+3. After parsing is completed the parsed module is downloaded in an asynchronous way from the
+server. Only the importing is done in a synchronous way.
+
+4. During the importing stage, the imported variable is just a pointer to the variable or function.
+
