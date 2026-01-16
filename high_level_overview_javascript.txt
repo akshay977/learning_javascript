@@ -299,3 +299,27 @@ outer scopes.
 
 4. this keyword does not point to the function itself and also not its variable environment.
 
+####### Modern Javascript development: Modules and Tooling ########
+
+1. We don't write a big script file and send it to browser. Earlier it used to be like this but now its different.
+   But today the big script is divided into modules and these modules can share data between them and make code
+   more organised and maintainable.
+
+2. We can add 3rd party modules like react, jquery etc using npm. npm is both the repository in which
+   packages are present and can be downloaded.
+
+3. After the development step, the project needs to go through a build process where one big final javascript file 
+   is built. So that final file will be deployed to the webserver for production and basically it will be sent
+   to the browsers in production.
+
+4. Build process bundles all modules into 1 single file which is a complex process which can eliminate unused code
+   and compress code as well. This is an important step for 2 reasons:
+		=> Older browsers don't support modules
+		=> Performance is improved to send less files to the browser by bundling.
+
+5. After bundling, transfiling and polyfilling happens which converts all modern javascript syntax and features
+   back to old ES5 syntax so that even older browsers can understand our code without breaking. This is done using
+   Babel. After these 2 steps we are ready to deploy the final bundle to a server for production.
+
+6. The build process is done by build tools like webpack, parcel etc. Webpack is more popular one but it is
+   hard to use. Parcel is a zero configuration bundler which simply works out of the box.
