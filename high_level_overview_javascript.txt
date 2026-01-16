@@ -323,3 +323,37 @@ outer scopes.
 
 6. The build process is done by build tools like webpack, parcel etc. Webpack is more popular one but it is
    hard to use. Parcel is a zero configuration bundler which simply works out of the box.
+
+####### ES6 Modules Overview #######
+
+1. Modules are stored in file, exactly 1 module per file.
+
+2. There are 2 types of files:
+ => ES6 module
+ => normal script files
+
+3. Differences between ES6 module and normal script files:
+
+=> Top-level variables:
+ - In ES6 modules, top level variables are scoped to the module.
+ - In script files, top level variables are global.
+
+=> Default mode:
+	- In ES6 modules, the javascript is compiled in strict mode. 
+	- In script files, the javascript is compiled in "sloppy" mode.
+
+=> Top-level this:
+	- In ES6 modules, the this keyword is undefined.
+	- In script files, the this keyword points to window object.
+
+=> Imports and Exports:
+	- In ES6 modules, imports and exports are possible. Also, the imports are hoisted in the module so
+	  they will be moved to the top. To link ES6 module to a HTML file, we need to use type="module" 
+	  attribute in script tag like this: <script type="module" />.
+	- In script files, imports and exports are impossible.
+
+=> File downloading:
+	- In ES6 modules, the module file is downloaded in an async way whether it is imported or
+	  it is a script tag of type module.
+	- In script files, the file is dowloaded in a synchronous way unless async or defer attributes
+	  are used in the script tag.
