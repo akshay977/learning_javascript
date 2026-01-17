@@ -373,3 +373,21 @@ server. Only the importing is done in a synchronous way.
 
 4. During the importing stage, the imported variable is just a pointer to the variable or function.
 
+##### Top level await (ES2022) #####
+
+1. Starting from ES2022 version, await can be used at top level outside of asynchronous functions atleast
+in ES6 modules and not in script files.
+
+2. But top level await request are blocking code so they are executed synchronously.
+
+Example:
+
+const getLastPost =  async function () {
+	// some async code
+};
+
+const lastPost = await getLastPost();
+
+3. If 1 module imports another module which is using top level await then the importing module
+waits for the top level await to finish executing the blocking code.
+
