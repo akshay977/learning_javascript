@@ -391,3 +391,33 @@ const lastPost = await getLastPost();
 3. If 1 module imports another module which is using top level await then the importing module
 waits for the top level await to finish executing the blocking code.
 
+##### Other module systems #####
+
+1. There are 2 more module systems other than ES6 modules and module pattern:
+	=> AMD modules
+	=> CommonJS modules
+
+2. CommonJS modules:
+ => Many npm modules are using CommonJS modules because Node.js uses CommonJS as ES6
+    modules were recently implemented.
+
+3. We cannot use commonJS modules without a module bundler so we have to install a package
+   in its ES6 modules version.
+
+4. In commonJS modules, we export functions like the following:
+
+// Export
+exports.addToCart = function (project, quality) {
+	// logic...
+}
+
+OR
+
+module.exports = function (product, quality) {
+	// logic...
+}
+
+// Import
+const { addToCart } = require('./shoppingCart.js');
+
+5. 
