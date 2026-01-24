@@ -1,0 +1,2 @@
+function o(o,e,t,n){Object.defineProperty(o,e,{get:t,set:n,enumerable:!0,configurable:!0})}var e={};o(e,"addToCart",()=>n),o(e,"totalPrice",()=>l),o(e,"qty",()=>r),console.log("Exporting module");let t=[],n=function(o,e){t.push({product:o,quantity:e}),console.log(`${e} ${o} added to cart`)},l=200,r=12;console.log("importing module"),console.log({ShoppingCart:e});
+//# sourceMappingURL=modules_practice.eaa8a050.js.map
