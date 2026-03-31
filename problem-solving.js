@@ -128,3 +128,31 @@ const deepAccess = (obj, path) => path.split('.').reduce((acc, key) => acc && ac
 */
 const randomInRange = (min, max) => Math.floor(Math.random*(max - min + 1)) + min;
 
+/*
+	Question 17: Can you write a function in JavaScript to count the occurrences of each element 
+	in an array and return the result as an object?
+*/
+const countOcurrencesEachElement = arr => arr.reduce((acc, value) => {
+	acc[val] = (acc[val] || 0) + 1
+	return acc;
+},{});
+
+/*
+	Alternate solution:
+	const countOccurrences = (arr) => arr.reduce((acc, val) => (acc[val] = (acc[val] || 0) + 1, acc), {});
+*/
+
+/*
+	Question 18: Can you write a function to capitalize the first letter of each word in a given sentence?
+*/
+const capitalizeWords = (sentence) => sentence.replace(/\b\w/g, char => char.toUpperCase());
+
+/*
+	Question 19: Can you write a function to reverse a given string?
+*/
+const reverseString = (str) => str.split('').reverse().join('');
+
+/*
+	Question 20: Can you write a function in JavaScript to find the longest word in a given sentence?
+*/
+const longestWord = (sentence) => sentence.split(' ').reduce((longest, word) => word.length > longest.length ? word : longest, '');
