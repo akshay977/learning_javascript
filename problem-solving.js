@@ -1,4 +1,17 @@
 /*
+	Coding Interview questions - Part-1
+	https://medium.com/deno-the-complete-reference/10-javascript-coding-interview-questions-part-1-a0e5bb606eaf
+	Coding Interview questions - Part-2
+	https://medium.com/deno-the-complete-reference/10-javascript-coding-interview-questions-part-2-42250060345c
+	Coding Interview questions - Part-3
+	https://medium.com/deno-the-complete-reference/10-javascript-coding-interview-questions-part-3-2250ed68f614
+	Coding Interview questions - Part-4
+	https://medium.com/deno-the-complete-reference/10-javascript-coding-interview-questions-part-4-748960cb8354
+	Coding Interview questions - Part-5
+	https://medium.com/deno-the-complete-reference/10-javascript-coding-interview-questions-part-5-83ca32b8939b
+*/
+
+/*
 	Question 1: Can you write a function in JavaScript to reverse the order of words in a given string?
 */
 const reversedString = str => str.split(' ').reverse().join(' ');
@@ -96,4 +109,22 @@ const decimalToBinary = num => num.toString(2);
 	Question 14: Can you write a function in JavaScript to calculate the factorial of a given non-negative integer?
 */
 const getFactorial = (n) => n === 0 ? 1 : Array.from({ length: n }, (val, i) => i+1).reduce((acc, num) => acc*num, 1);
+
+/*
+	Question 15: Write a concise function to safely access a deeply nested property of an object 
+	without throwing an error if any intermediate property is undefined.
+
+	const nestedObject = { a: { b: { c: 42 } } };
+	const propertyPath = 'a.b.c';
+	const result = deepAccess(nestedObject, propertyPath);
+	// result: 42
+*/
+
+const deepAccess = (obj, path) => path.split('.').reduce((acc, key) => acc && acc[key], obj);
+
+/*
+	Question 16: Can you write a function in JavaScript to generate a random integer between a 
+	specified minimum and maximum value (inclusive)?
+*/
+const randomInRange = (min, max) => Math.floor(Math.random*(max - min + 1)) + min;
 
