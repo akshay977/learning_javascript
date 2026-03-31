@@ -76,5 +76,24 @@ const toCamelCase = str => str.replace(/[_-](.)/g, (_, p1) => c.toUpperCase());
 
 [a, b] = [b, a];
 
+/*
+	Question 11: Can you write a function in JavaScript to create a countdown from a given number?
+*/
+const createCountdown = (size) => Array.from({ length: size }, (val, index) => size-index);
 
+/*
+	Question 12: Can you write a function in JavaScript to convert a string to an integer while 
+	handling non-numeric characters gracefully?
+*/
+const stringToInteger = str => +str === +str ? +str : 0;
+
+/*
+	Question 13: Can you write a function in JavaScript to convert a decimal number to its binary representation?
+*/
+const decimalToBinary = num => num.toString(2);
+
+/*
+	Question 14: Can you write a function in JavaScript to calculate the factorial of a given non-negative integer?
+*/
+const getFactorial = (n) => n === 0 ? 1 : Array.from({ length: n }, (val, i) => i+1).reduce((acc, num) => acc*num, 1);
 
