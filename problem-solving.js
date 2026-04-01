@@ -265,3 +265,37 @@ const throttle = (func, delay) => {
 	Q. 30: Can you write a JavaScript function to check if a given string has all unique characters?
 */
 const checkUniqueCharacters = (str) => new Set(str).size === str.length;
+
+/*
+	Q. 31: Can you write a function in JavaScript to convert each string in an array of strings to uppercase?
+*/
+const convertToUppercase = (arr) => arr.map(el => el.toUpperCase());
+
+/*
+	Q. 32: Can you write a JavaScript function to find the first non-repeated character in a given string?
+*/
+const firstNonRepeatedChar = (str) => str.split('').find(char => str.indexOf(char) === str.lastIndexOf(char));
+
+/*
+	Q. 33: Can you write a function to flatten nested objects
+*/
+const flattenObject = (obj) => {
+  let finalObj = {};
+  
+  for (const key in obj) {
+    if (typeof obj[key] === 'object') {
+      let flattened = flattenObject(obj[key]);
+      for (let key2 in flattened) {
+        finalObj[key+'.' + key2] = flattened[key2];
+      }
+    } else {
+      finalObj[key] = obj[key];
+    }
+  }
+  
+  return finalObj;
+}
+
+// const o = { a: 1, b: { c: 2, d: { e: 3 } } };
+// const r = flattenObject(o);
+// console.log(r);
