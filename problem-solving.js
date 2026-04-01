@@ -12,18 +12,18 @@
 */
 
 /*
-	Question 1: Can you write a function in JavaScript to reverse the order of words in a given string?
+	Q.1: Can you write a function in JavaScript to reverse the order of words in a given string?
 */
 const reversedString = str => str.split(' ').reverse().join(' ');
 
 /*
-	Question 2: Can you write a function in JavaScript to remove duplicate elements from an array?
+	Q.2: Can you write a function in JavaScript to remove duplicate elements from an array?
 */
 
 const removeDuplicates = arr => [...new Set(arr)];
 
 /*
-	Question 3: Can you write a function in JavaScript to merge two objects without overwriting existing properties?
+	Q.3: Can you write a function in JavaScript to merge two objects without overwriting existing properties?
 */
 const mergeObjects = (obj1, obj2) => {
 	const result = {...obj1};
@@ -37,12 +37,12 @@ const mergeObjects = (obj1, obj2) => {
 }
 
 /*
-	Question 4: Can you write a function in JavaScript to get the current date in the format “YYYY-MM-DD”?
+	Q.4: Can you write a function in JavaScript to get the current date in the format “YYYY-MM-DD”?
 */
 const currentDate = () => new Date().toISOString().split('T')[0];
 
 /*
-	Question 5: Can you write a function in JavaScript to calculate the cumulative sum of an array?
+	Q.5: Can you write a function in JavaScript to calculate the cumulative sum of an array?
 */
 const cumulativeSum = arr => arr.reduce((acc, value) => [...acc, acc.length ? acc[acc.length-1] + value : value], []);
 /*
@@ -51,7 +51,7 @@ const cumulativeSum = arr => arr.reduce((acc, value) => [...acc, acc.length ? ac
 */
 
 /*
-	Question 6: Can you write a function in JavaScript to split an array into chunks of a specified size?
+	Q.6: Can you write a function in JavaScript to split an array into chunks of a specified size?
 */
 const chunkArray = (arr, size) => Array.from({ length: Math.ceil(arr.length)/size }, (el, index) => arr.slice(index*size, index*size + size));
 /*
@@ -64,7 +64,7 @@ const chunkArray = (arr, size) => Array.from({ length: Math.ceil(arr.length)/siz
 const FindLargestGroupAfterSplit = (arr, element) => Math.max(...arr.join('').split(element).map(group => group.length));
 
 /*
-	Question 8: Can you write a function in JavaScript to transpose a 2D matrix?
+	Q.8: Can you write a function in JavaScript to transpose a 2D matrix?
 
 	Input:
 	[
@@ -79,39 +79,39 @@ const FindLargestGroupAfterSplit = (arr, element) => Math.max(...arr.join('').sp
 const transposeMatrix = matrix => matrix[0].map((col, i) => matrix.map(row => row[i]));
 
 /*
-	Question 9: Can you write a function in JavaScript to convert a string containing hyphens and underscores to camel case?
+	Q.9: Can you write a function in JavaScript to convert a string containing hyphens and underscores to camel case?
 */
 const toCamelCase = str => str.replace(/[_-](.)/g, (_, p1) => c.toUpperCase());
 
 /*
-	Question 10: Can you write a line of code in JavaScript to swap the values of two variables without using a temporary variable?
+	Q.10: Can you write a line of code in JavaScript to swap the values of two variables without using a temporary variable?
 */
 
 [a, b] = [b, a];
 
 /*
-	Question 11: Can you write a function in JavaScript to create a countdown from a given number?
+	Q.11: Can you write a function in JavaScript to create a countdown from a given number?
 */
 const createCountdown = (size) => Array.from({ length: size }, (val, index) => size-index);
 
 /*
-	Question 12: Can you write a function in JavaScript to convert a string to an integer while 
+	Q.12: Can you write a function in JavaScript to convert a string to an integer while 
 	handling non-numeric characters gracefully?
 */
 const stringToInteger = str => +str === +str ? +str : 0;
 
 /*
-	Question 13: Can you write a function in JavaScript to convert a decimal number to its binary representation?
+	Q.13: Can you write a function in JavaScript to convert a decimal number to its binary representation?
 */
 const decimalToBinary = num => num.toString(2);
 
 /*
-	Question 14: Can you write a function in JavaScript to calculate the factorial of a given non-negative integer?
+	Q.14: Can you write a function in JavaScript to calculate the factorial of a given non-negative integer?
 */
 const getFactorial = (n) => n === 0 ? 1 : Array.from({ length: n }, (val, i) => i+1).reduce((acc, num) => acc*num, 1);
 
 /*
-	Question 15: Write a concise function to safely access a deeply nested property of an object 
+	Q.15: Write a concise function to safely access a deeply nested property of an object 
 	without throwing an error if any intermediate property is undefined.
 
 	const nestedObject = { a: { b: { c: 42 } } };
@@ -123,13 +123,13 @@ const getFactorial = (n) => n === 0 ? 1 : Array.from({ length: n }, (val, i) => 
 const deepAccess = (obj, path) => path.split('.').reduce((acc, key) => acc && acc[key], obj);
 
 /*
-	Question 16: Can you write a function in JavaScript to generate a random integer between a 
+	Q.16: Can you write a function in JavaScript to generate a random integer between a 
 	specified minimum and maximum value (inclusive)?
 */
 const randomInRange = (min, max) => Math.floor(Math.random*(max - min + 1)) + min;
 
 /*
-	Question 17: Can you write a function in JavaScript to count the occurrences of each element 
+	Q.17: Can you write a function in JavaScript to count the occurrences of each element 
 	in an array and return the result as an object?
 */
 const countOcurrencesEachElement = arr => arr.reduce((acc, value) => {
@@ -143,32 +143,32 @@ const countOcurrencesEachElement = arr => arr.reduce((acc, value) => {
 */
 
 /*
-	Question 18: Can you write a function to capitalize the first letter of each word in a given sentence?
+	Q.18: Can you write a function to capitalize the first letter of each word in a given sentence?
 */
 const capitalizeWords = (sentence) => sentence.replace(/\b\w/g, char => char.toUpperCase());
 
 /*
-	Question 19: Can you write a function to reverse a given string?
+	Q.19: Can you write a function to reverse a given string?
 */
 const reverseString = (str) => str.split('').reverse().join('');
 
 /*
-	Question 20: Can you write a function in JavaScript to find the longest word in a given sentence?
+	Q.20: Can you write a function in JavaScript to find the longest word in a given sentence?
 */
 const longestWord = (sentence) => sentence.split(' ').reduce((longest, word) => word.length > longest.length ? word : longest, '');
 
 /*
-	Question 21: Can you write a function in JavaScript to rename a specific property in an object?
+	Q.21: Can you write a function in JavaScript to rename a specific property in an object?
 */
 const renameProperty = (obj, oldName, newName) => ({ ...obj, obj[newName]: obj[oldName], ...(delete obj[oldName], obj)});
 
 /*
-	Question 22: Can you write a function in JavaScript to find the second-largest element in an array?
+	Q.22: Can you write a function in JavaScript to find the second-largest element in an array?
 */
 const findSecondLargest = (arr) => [...new Set(arr)].sort((a, b) => b-a)[1];
 
 /*
-	Question 23: Can you write a JavaScript function to group an array of objects by a specified property?
+	Q.23: Can you write a JavaScript function to group an array of objects by a specified property?
 
 	Input:
 	const people = [
@@ -194,17 +194,41 @@ const groupByProperty = (arr, property) => {
 }
 
 /*
-	Question 24: Can you write a JavaScript function to find the missing number in an array of consecutive integers from 1 to N?
+	Q.24: Can you write a JavaScript function to find the missing number in an array of consecutive integers from 1 to N?
 */
 const findMissingNumber = (arr) => (arr.length*(arr.length+1))/2 - arr.reduce((acc, num) => acc+num, 0);
 
 /*
-	Question 25: Can you write a JavaScript function to reverse the key-value pairs of an object?
+	Q.25: Can you write a JavaScript function to reverse the key-value pairs of an object?
 */
 const reverseKeyValues = (obj) => Object.fromEntries(Object.entries(obj).map(([key, value]) => [value, key]));
 
 /*
-	Question 26: Can you write a JavaScript function to check if a given string has balanced parentheses?
+	Q.26: Can you write a JavaScript function to check if a given string has balanced parentheses?
 */
 const isBalancedParenthesis = (str) => str.split('').reduce((count, el) => (count >= 0 ? (count + (el === '(' ? 1 : el === ')' ? -1 : 0)) : -1), 0) === 0;
 
+/*
+	Q.27: Can you write a concise function in JavaScript to implement a simple debounce function 
+	that delays the execution of a given function until after a specified time interval has passed 
+	without additional calls?
+
+	In JavaScript, debounce is a powerful technique used to optimize event handling by delaying the execution 
+	of a function until after a specified period of inactivity. It helps prevent excessive function calls 
+	triggered by rapid events, such as keystrokes or scroll movements.
+
+	The clearTimeout cancels the previous one and executes the latest timeout function. Without
+	clearTimeout we will execute both the functions after the delay without cancelling the
+	previous one. Basically, only the latest timeout should execute.
+*/
+const debounce = (func, delay) => {
+	let timeout;
+	return (...args) => {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => func(...args), delay);
+	}
+}
+
+// const delayedLog = debounce((text) => console.log(text), 1000);
+// delayedLog('Hello'); // Logs 'Hello' after 1000 milliseconds
+// delayedLog('World'); // Cancels the previous timeout and sets a new one for 'World'
