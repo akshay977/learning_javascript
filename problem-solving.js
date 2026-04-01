@@ -232,3 +232,36 @@ const debounce = (func, delay) => {
 // const delayedLog = debounce((text) => console.log(text), 1000);
 // delayedLog('Hello'); // Logs 'Hello' after 1000 milliseconds
 // delayedLog('World'); // Cancels the previous timeout and sets a new one for 'World'
+
+/*
+	Q. 28: Can you write a JavaScript function to truncate a given string to a specified length 
+	and append “…” if it exceeds that length?
+*/
+const truncateString = (str, maxLength) => str.length > maxLength ? str.slice(0, maxLength) + '...' : str;
+
+/*
+	Q. 29: Can you write a throttle function in JavaScript to implement a simple throttle function 
+	that limits the execution of a given function to once every specified time interval?
+*/
+
+const throttle = (func, delay) => {
+	let throttled = false;
+	return (...args) => {
+		if (!throttled) {
+			func(...args);
+			throttled=true;
+			setTimeout(() => throttled = false, delay);
+		}
+	}
+}
+
+/*
+	const throttledLog = throttle((text) => console.log(text), 1000);
+	throttledLog('Hello'); // Logs 'Hello'
+	throttledLog('World'); // Does not log 'World' because it's within the 1000ms throttle interval
+*/
+
+/*
+	Q. 30: Can you write a JavaScript function to check if a given string has all unique characters?
+*/
+const checkUniqueCharacters = (str) => new Set(str).size === str.length;
