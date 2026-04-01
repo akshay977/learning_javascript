@@ -156,3 +156,55 @@ const reverseString = (str) => str.split('').reverse().join('');
 	Question 20: Can you write a function in JavaScript to find the longest word in a given sentence?
 */
 const longestWord = (sentence) => sentence.split(' ').reduce((longest, word) => word.length > longest.length ? word : longest, '');
+
+/*
+	Question 21: Can you write a function in JavaScript to rename a specific property in an object?
+*/
+const renameProperty = (obj, oldName, newName) => ({ ...obj, obj[newName]: obj[oldName], ...(delete obj[oldName], obj)});
+
+/*
+	Question 22: Can you write a function in JavaScript to find the second-largest element in an array?
+*/
+const findSecondLargest = (arr) => [...new Set(arr)].sort((a, b) => b-a)[1];
+
+/*
+	Question 23: Can you write a JavaScript function to group an array of objects by a specified property?
+
+	Input:
+	const people = [
+	  { id: 1, name: 'Alice', age: 25 },
+	  { id: 2, name: 'Bob', age: 30 },
+	  { id: 3, name: 'Alice', age: 28 },
+	];
+
+	Output:
+	{
+	  Alice: [
+	    { id: 1, name: 'Alice', age: 25 },
+	    { id: 3, name: 'Alice', age: 28 }
+	  ],
+	  Bob: [ { id: 2, name: 'Bob', age: 30 } ]
+	}
+*/
+const groupByProperty = (arr, property) => {
+  return arr.reduce((acc, val) => ({
+    ...acc,
+    [val[property]]: [...(acc[val[property]] || []) , val]
+  }), {});
+}
+
+/*
+	Question 24: Can you write a JavaScript function to find the missing number in an array of consecutive integers from 1 to N?
+*/
+const findMissingNumber = (arr) => (arr.length*(arr.length+1))/2 - arr.reduce((acc, num) => acc+num, 0);
+
+/*
+	Question 25: Can you write a JavaScript function to reverse the key-value pairs of an object?
+*/
+const reverseKeyValues = (obj) => Object.fromEntries(Object.entries(obj).map(([key, value]) => [value, key]));
+
+/*
+	Question 26: Can you write a JavaScript function to check if a given string has balanced parentheses?
+*/
+const isBalancedParenthesis = (str) => str.split('').reduce((count, el) => (count >= 0 ? (count + (el === '(' ? 1 : el === ')' ? -1 : 0)) : -1), 0) === 0;
+
