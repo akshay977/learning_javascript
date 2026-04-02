@@ -395,3 +395,46 @@ const d = 2;
 rotateArrayV4(arr, d);
 
 console.log(arr.join(" "));
+
+/*
+	Q. 41: Can you write a JavaScript function that returns a promise which resolves after a specified delay?
+*/
+const delayPromise = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+/*
+	Q. 43: Can you write a JavaScript function to check if two objects have the same properties (regardless of order)?
+*/
+const haveSameProperties = (o1, o2) => JSON.stringify(Object.keys(o1).sort()) === JSON.stringify(Object.keys(o2).sort());
+
+/*
+	Q. 44: Can you write a JavaScript function to count the occurrences of each word in a given sentence?
+*/
+const countWordOccurrences = (sentence) => sentence.split(' ').reduce((countMap, word) => ({ ...countMap, [word]: (countMap[word] || 0) + 1 }), {});
+
+/*
+	Q. 48: Can you write a simple event emitter in JavaScript?
+*/
+const createEventEmitter = () => {
+	const listeners = new Map();
+	return {
+		on: (event, listener) => {
+			listeners.has(event) ? listeners.get(event).push(listeners) : listeners.set(event, [listener])
+		},
+		emit: (event, ...args) => {
+			listeners.has(event)?.forEach(listener => listener(...args));
+		},
+		off: (event, listener) => {
+			listeners.set(event, listeners.get(event)?.filter(el => el !== listener))
+		}
+	}
+}
+
+const eventEmitter = createEventEmitter();
+
+const greetListener = (name) => console.log(`Hello, ${name}!`);
+eventEmitter.on('greet', greetListener);
+
+eventEmitter.emit('greet', 'Alice'); // Output: 'Hello, Alice!'
+eventEmitter.off('greet', greetListener);
+
+eventEmitter.emit('greet', 'Bob'); // No output (listener removed
