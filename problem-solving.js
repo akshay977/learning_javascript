@@ -232,3 +232,166 @@ const debounce = (func, delay) => {
 // const delayedLog = debounce((text) => console.log(text), 1000);
 // delayedLog('Hello'); // Logs 'Hello' after 1000 milliseconds
 // delayedLog('World'); // Cancels the previous timeout and sets a new one for 'World'
+
+/*
+	Q. 28: Can you write a JavaScript function to truncate a given string to a specified length 
+	and append “…” if it exceeds that length?
+*/
+const truncateString = (str, maxLength) => str.length > maxLength ? str.slice(0, maxLength) + '...' : str;
+
+/*
+	Q. 29: Can you write a throttle function in JavaScript to implement a simple throttle function 
+	that limits the execution of a given function to once every specified time interval?
+*/
+
+const throttle = (func, delay) => {
+	let throttled = false;
+	return (...args) => {
+		if (!throttled) {
+			func(...args);
+			throttled=true;
+			setTimeout(() => throttled = false, delay);
+		}
+	}
+}
+
+/*
+	const throttledLog = throttle((text) => console.log(text), 1000);
+	throttledLog('Hello'); // Logs 'Hello'
+	throttledLog('World'); // Does not log 'World' because it's within the 1000ms throttle interval
+*/
+
+/*
+	Q. 30: Can you write a JavaScript function to check if a given string has all unique characters?
+*/
+const checkUniqueCharacters = (str) => new Set(str).size === str.length;
+
+/*
+	Q. 31: Can you write a function in JavaScript to convert each string in an array of strings to uppercase?
+*/
+const convertToUppercase = (arr) => arr.map(el => el.toUpperCase());
+
+/*
+	Q. 32: Can you write a JavaScript function to find the first non-repeated character in a given string?
+*/
+const firstNonRepeatedChar = (str) => str.split('').find(char => str.indexOf(char) === str.lastIndexOf(char));
+
+/*
+	Q. 33: Can you write a function to flatten nested objects
+*/
+const flattenObject = (obj) => {
+  let finalObj = {};
+  
+  for (const key in obj) {
+    if (typeof obj[key] === 'object') {
+      let flattened = flattenObject(obj[key]);
+      for (let key2 in flattened) {
+        finalObj[key+'.' + key2] = flattened[key2];
+      }
+    } else {
+      finalObj[key] = obj[key];
+    }
+  }
+  
+  return finalObj;
+}
+
+// const o = { a: 1, b: { c: 2, d: { e: 3 } } };
+// const r = flattenObject(o);
+// console.log(r);
+
+/*
+	Question 35: Can you write a JavaScript function to rotate the elements of an array 
+	to the right by a specified number of positions?
+*/
+
+function rotateArrayV1(arr, d) {
+  const n = arr.length;
+
+  for (let i = 0; i < d; i++) {
+    const last = arr[n - 1];
+    for (let j = n - 1; j > 0; j--) {
+      arr[j] = arr[j - 1];
+    }
+    arr[0] = last;
+  }
+}
+
+function rotateArrayV2(arr, d) {
+  const n = arr.length;
+  d = d % n;
+  const temp = new Array(n);
+
+  // Copy the last d elements
+  for (let i = 0; i < d; i++) {
+    temp[i] = arr[n - 1 - i];
+  }
+
+  // Copy the first n - d elements
+  for (let i = 0; i < n - d; i++) {
+    temp[i + d] = arr[i];
+  }
+
+  for (let i = 0; i < n; i++) {
+    arr[i] = temp[i];
+  }
+}
+
+function reverse(arr, start, end) {
+  while (start < end) {
+    [arr[start], arr[end]] = [arr[end], arr[start]];
+    start++;
+    end--;
+  }
+}
+
+function rotateArrayV3(arr, d) {
+  const n = arr.length;
+  d = d % n;
+
+  reverse(arr, 0, n - 1);
+  reverse(arr, 0, d - 1);
+  reverse(arr, d, n - 1);
+}
+
+function rotateArrayV4(arr, d) {
+  const n = arr.length;
+
+  d = d % n;
+
+  const cycles = gcd(n, d);
+
+  for (let i = 0; i < cycles; i++) {
+    let currIdx = i;
+    let currEle = arr[currIdx];
+
+    do {
+      const nextIdx = (currIdx + d) % n;
+      const nextEle = arr[nextIdx];
+
+      arr[nextIdx] = currEle;
+      currEle = nextEle;
+      currIdx = nextIdx;
+    } while (currIdx !== i);
+  }
+}
+
+function gcd(a, b) {
+  while (b !== 0) {
+    const temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
+}
+
+// Example usage
+const arr = [1, 2, 3, 4, 5, 6];
+const d = 2;
+
+// rotateArrayV1(arr, d);
+// rotateArrayV2(arr, d);
+// rotateArrayV3(arr, d);
+rotateArrayV4(arr, d);
+
+console.log(arr.join(" "));
