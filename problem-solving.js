@@ -392,9 +392,9 @@ const d = 2;
 // rotateArrayV1(arr, d);
 // rotateArrayV2(arr, d);
 // rotateArrayV3(arr, d);
-rotateArrayV4(arr, d);
+// rotateArrayV4(arr, d);
 
-console.log(arr.join(" "));
+// console.log(arr.join(" "));
 
 /*
 	Q. 41: Can you write a JavaScript function that returns a promise which resolves after a specified delay?
@@ -429,12 +429,31 @@ const createEventEmitter = () => {
 	}
 }
 
-const eventEmitter = createEventEmitter();
+// const eventEmitter = createEventEmitter();
 
-const greetListener = (name) => console.log(`Hello, ${name}!`);
-eventEmitter.on('greet', greetListener);
+// const greetListener = (name) => console.log(`Hello, ${name}!`);
+// eventEmitter.on('greet', greetListener);
 
-eventEmitter.emit('greet', 'Alice'); // Output: 'Hello, Alice!'
-eventEmitter.off('greet', greetListener);
+// eventEmitter.emit('greet', 'Alice'); // Output: 'Hello, Alice!'
+// eventEmitter.off('greet', greetListener);
 
-eventEmitter.emit('greet', 'Bob'); // No output (listener removed
+// eventEmitter.emit('greet', 'Bob'); // No output (listener removed
+
+/*
+	Question 49: Can you write a JavaScript function to implement a basic queue 
+	using arrays with enqueue and dequeue operations?
+*/
+const createQueue = () => ({
+	items: [],
+	enqueue: (item) => (items.push(item)),
+	dequeue: () => items.shift()
+});
+
+/*
+	Question 50: Can you write a JavaScript function to implement a basic stack using arrays with push and pop operations?
+*/
+const createStack = () => ({
+	items: [],
+	push: (item) => items.push(item),
+	pop: () => items.pop()
+});
